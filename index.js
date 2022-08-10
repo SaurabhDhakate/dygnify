@@ -11,7 +11,7 @@ const client = new MongoClient(uri, {});
 
 app.use(express.json());
 app.use(cors({ origin: "*" }));
-app.use('/', express.static(path.join(__dirname, './client/build')))
+app.use('/', express.static(path.join(__dirname, './build')))
 
 app.get("/api/borrower", (req, res) => getAllFromCollection(req, res, "borrowers"));
 app.post("/api/borrower", (req, res) => addInCollection(req, res, "borrowers"));
